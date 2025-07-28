@@ -1,0 +1,7 @@
+[
+  {
+    "label": "Java: Compile & Run Current File",
+    "command": "javac \"$ZED_FILE\" && java -cp \"$ZED_FILE_DIR\" \"$ZED_FILE_BASENAME_WITHOUT_EXTENSION\"",
+    "use_shell": true
+  }
+]

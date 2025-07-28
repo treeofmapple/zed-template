@@ -1,0 +1,243 @@
+{
+    "scroll_sensitivity": 1.0,
+    "fast_scroll_sensitivity": 4.0,
+    "hide_mouse": "on_typing_and_movement",
+    "cursor_blink": true,
+    "cursor_shape": null,
+    "base_keymap": null,
+    "show_completions_on_input": true,
+
+    "ssh_connections": [],
+
+    "indent_guides": {
+        "enabled": true,
+        "line_width": 1,
+        "active_line_width": 1,
+        "coloring": "indent_aware",
+        "background_coloring": "disabled"
+    },
+
+    "tabs": {
+        "git_status": false,
+        "close_position": "right",
+        "file_icons": true,
+        "show_close_button": "always",
+        "activate_on_close": "history",
+        "show_diagnostics": "off"
+    },
+
+    "preview_tabs": {
+        "enabled": true,
+        "enable_preview_from_file_finder": false,
+        "enable_preview_from_code_navigation": false
+    },
+
+    "search_wrap": true,
+    "search": {
+        "button": true,
+        "whole_word": false,
+        "case_sensitive": false,
+        "include_ignored": false,
+        "regex": false
+    },
+
+    "file_finder": {
+        "file_icons": true,
+        "modal_max_width": "small",
+        "skip_focus_for_active_in_search": false,
+        "git_status": true,
+        "include_ignored": null
+    },
+
+    "auto_update": false,
+    "lsp_document_colors": "inlay",
+
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/.jj",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        "**/mvnw*",
+        "**/bin",
+        "**/target",
+        "**/.classpath",
+        "**/.factorypath",
+        "**/.mvn"
+    ],
+
+    "private_files": [
+        "**/.env*",
+        "**/*.pem",
+        "**/*.key",
+        "**/*.cert",
+        "**/*.crt",
+        "**/secrets.yml"
+    ],
+
+    "file_scan_inclusions": [".env*"],
+
+    "debuggers": [],
+
+    "tab_size": 4,
+
+    "image_viewer": {
+        "unit": "binary"
+    },
+
+    "terminal": {
+        "working_directory": "current_project_directory",
+        "dock": "bottom",
+        "shell": "system"
+    },
+
+    "journal": {
+        "path": "C:\\Users\\lapiz\\zed-workspaces\\journal",
+        "hour_format": "hour24"
+    },
+
+    "project_panel": {
+        "dock": "right"
+    },
+
+    "collaboration_panel": {
+        "button": false
+    },
+
+    "agent": {
+        "version": "2",
+        "enabled": false,
+        "button": false
+    },
+
+    "icon_theme": "Material Icon Theme",
+    "telemetry": {
+        "metrics": false,
+        "diagnostics": false
+    },
+
+    "ui_font_size": 16,
+    "buffer_font_size": 15,
+    "ui_font_family": "Cascadia Mono",
+    "buffer_font_family": "Cascadia Code",
+
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "Cappone (eclipse)"
+    },
+
+    "format_on_save": "off",
+    "formatter": "prettier",
+    "enable_language_server": true,
+
+    "lsp": {
+        "java": {
+            "settings": {
+                "java.jdt.ls.lombokSupport.enabled:": true,
+                "server": {
+                    "path": "C:\\Program Files\\BellSoft\\LibericaJDK-21-Full\\bin\\java.exe",
+                    "arguments": [
+                        "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+                        "-Dosgi.bundles.defaultStartLevel=4",
+                        "-Declipse.product=org.eclipse.jdt.ls.core.product",
+                        "-Dlog.level=ALL",
+                        "-noverify",
+                        "-Xmx1G",
+                        "--add-modules=ALL-SYSTEM",
+                        "--add-opens",
+                        "java.base/java.util=ALL-UNNAMED",
+                        "--add-opens",
+                        "java.base/java.lang=ALL-UNNAMED",
+                        "-javaagent:C:\\Users\\lapiz\\Zed\\Zed-Tools\\lombok.jar",
+                        "-jar",
+                        "C:\\Users\\lapiz\\Zed\\Zed-Tools\\jdt-server\\plugins\\org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
+                        "-configuration",
+                        "C:\\Users\\lapiz\\Zed\\Zed-Tools\\jdt-server\\config_win",
+                        "-data",
+                        "C:\\Users\\lapiz\\zed-workspaces\\java"
+                    ]
+                }
+            },
+            "initialization_options": {
+                "bundles": [],
+                "workspaceFolders": ["C:\\Users\\lapiz\\zed-workspaces\\java"],
+                "settings": {
+                    "java": {
+                        "errors": {
+                            "incompleteClasspath": {
+                                "severity": "warning"
+                            }
+                        },
+                        "configuration": {
+                            "updateBuildConfiguration": "interactive"
+                        },
+                        "import": {
+                            "gradle": { "enabled": true },
+                            "maven": { "enabled": true },
+                            "exclusions": []
+                        },
+                        "autobuild": { "enabled": false },
+                        "format": { "enabled": true },
+                        "contentProvider": { "preferred": null },
+                        "completion": {
+                            "favoriteStaticMembers": [
+                                "org.junit.Assert.*",
+                                "org.junit.Assume.*",
+                                "org.junit.jupiter.api.Assertions.*",
+                                "org.junit.jupiter.api.Assumptions.*",
+                                "org.junit.jupiter.api.DynamicContainer.*",
+                                "org.junit.jupiter.api.DynamicTest.*"
+                            ],
+                            "importOrder": ["java", "javax", "com", "org"]
+                        },
+                        "jdt": {
+                            "ls": { "lombokSupport": { "enabled": true } }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "languages": {
+        "CSS": {
+            "prettier": { "allowed": true }
+        },
+
+        "HTML": {
+            "prettier": { "allowed": true }
+        },
+
+        "JavaScript": {
+            "prettier": { "allowed": true }
+        },
+
+        "TypeScript": {
+            "prettier": { "allowed": true }
+        },
+
+        "TSX": {
+            "prettier": { "allowed": true }
+        },
+
+        "JSON": {
+            "prettier": { "allowed": true }
+        },
+
+        "XML": {
+            "prettier": {
+                "allowed": true,
+                "plugins": ["@prettier/plugin-xml"]
+            }
+        },
+
+        "YAML": {
+            "prettier": { "allowed": true }
+        }
+    }
+}
