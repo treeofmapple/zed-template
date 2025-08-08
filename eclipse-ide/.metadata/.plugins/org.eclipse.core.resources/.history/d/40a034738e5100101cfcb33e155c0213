@@ -1,0 +1,43 @@
+package com.tom.front.basic.repository;
+
+import java.time.LocalDate;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import com.tom.front.basic.model.Book;
+
+public class BookSpecification {
+
+	public static Specification<Book> findByCriteria(String title, String author, LocalDate startDate, LocalDate endDate) {
+        return (root, query, cb) -> {
+            
+            // A list to hold all the individual predicates (conditions).
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (title != null && !title.isBlank()) {
+                // This creates a "LOWER(title) LIKE ?" predicate.
+                // It's safe because JPA will pass `title` as a parameter, not inject it.
+                predicates.add(cb.like(cb.lower(root.get("title")), "%" + title.toLowerCase() + "%"));
+            }
+
+            if (author != null && !author.isBlank()) {
+                // Creates a "LOWER(author) LIKE ?" predicate.
+                predicates.add(cb.like(cb.lower(root.get("author")), "%" + author.toLowerCase() + "%"));
+            }
+
+            if (startDate != null && endDate != null) {
+                // Creates a "publishedDate BETWEEN ? AND ?" predicate.
+                predicates.add(cb.between(root.get("publishedDate"), startDate, endDate));
+            } else if (startDate != null) {
+                predicates.add(cb.greaterThanOrEqualTo(root.get("publishedDate"), startDate));
+            } else if (endDate != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("publishedDate"), endDate));
+            }
+
+            // Combines all the created predicates with an AND operator.
+            // cb.and() takes an array, so we convert the list to an array.
+            return cb.and(predicates.toArray(new Predicate[0]));
+        };
+	}
+	
+}

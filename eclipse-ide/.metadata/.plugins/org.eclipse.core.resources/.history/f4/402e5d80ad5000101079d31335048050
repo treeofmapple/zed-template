@@ -1,0 +1,10 @@
+package updateknowledge.signature;
+
+public class JavaSignature {
+
+	public void generateSignature() {
+		
+	}
+	
+	
+}

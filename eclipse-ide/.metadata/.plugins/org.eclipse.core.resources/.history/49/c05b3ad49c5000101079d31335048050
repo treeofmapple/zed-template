@@ -1,0 +1,16 @@
+package updateknowledge;
+
+import updateknowledge.util.GenericsFactory;
+import updateknowledge.util.SomeObject;
+
+public class InstantiationGenerics {
+
+	GenericsFactory<InstantiationGenerics> factory = new GenericsFactory<InstantiationGenerics>(InstantiationGenerics.class);
+	
+	InstantiationGenerics myClassInstance = factory.createInstance();
+	
+	GenericsFactory<SomeObject> factory = new GenericsFactory<SomeObject>(SomeObject.class);
+	
+	SomeObject someObjectInstance = factory.createInstance();
+	
+}

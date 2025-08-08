@@ -1,0 +1,8 @@
+package updateknowledge;
+
+public class GenericsSample <T> {
+
+	
+	
+	
+}

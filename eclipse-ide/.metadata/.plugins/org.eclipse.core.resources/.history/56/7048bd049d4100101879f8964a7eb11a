@@ -1,0 +1,19 @@
+package com.tom.benchmark.monolith.product;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+import org.mapstruct.factory.Mappers;
+
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface ProductMapper {
+
+	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
+	
+	Product toProduct(ProductRequest request);
+	
+	ProductResponse toResponse(Product product);
+	
+	// @Mapping(target = "id", ignore = true)
+	// void updateProductFromRequest(ProductRequest request, @MappingTarget Product product);
+	
+}

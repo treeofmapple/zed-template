@@ -1,0 +1,27 @@
+package constructors;
+
+public class ListNode {
+	public int val;
+	public ListNode next;
+
+	public ListNode() {
+
+	}
+
+	public ListNode(int val) {
+		this.val = val;
+	}
+
+	public ListNode(int val, ListNode next) {
+		this.val = val;
+		this.next = next;
+	}
+}
+
+
+/**
+ * This is about <code>ClassName</code>.
+ * {@link com.yourCompany.aPackage.Interface}
+ * @author author
+ * @deprecated use <code>OtherClass</code>
+ */

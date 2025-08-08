@@ -1,0 +1,15 @@
+package updateknowledge;
+
+import main.Main;
+
+public class Memory {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	
+	
+	
+	
+}

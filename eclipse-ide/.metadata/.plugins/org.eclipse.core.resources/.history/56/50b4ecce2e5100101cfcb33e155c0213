@@ -1,0 +1,19 @@
+package com.tom.front.basic.mapper;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+import org.mapstruct.factory.Mappers;
+
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface BookMapper {
+
+	BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+	
+	@Mapping(target = "id", ignore = true)
+	Book build();
+	
+	
+	
+	
+	
+}

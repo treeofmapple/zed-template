@@ -1,0 +1,52 @@
+package com.tom.benchmark.order.mapper;
+
+import com.tom.benchmark.order.dto.OrderItemRequest;
+import com.tom.benchmark.order.dto.OrderItemResponse;
+import com.tom.benchmark.order.model.OrderItem;
+import java.math.BigDecimal;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-06-04T01:35:39-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class OrderItemMapperImpl implements OrderItemMapper {
+
+    @Override
+    public OrderItem toOrderItem(OrderItemRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        OrderItem orderItem = new OrderItem();
+
+        orderItem.setQuantity( request.quantity() );
+
+        return orderItem;
+    }
+
+    @Override
+    public OrderItemResponse toResponse(OrderItem orderItem) {
+        if ( orderItem == null ) {
+            return null;
+        }
+
+        Long id = null;
+        int quantity = 0;
+        BigDecimal priceAtPurchase = null;
+
+        id = orderItem.getId();
+        quantity = orderItem.getQuantity();
+        priceAtPurchase = orderItem.getPriceAtPurchase();
+
+        String productName = null;
+        BigDecimal itemTotal = calculateItemTotal(orderItem);
+
+        OrderItemResponse orderItemResponse = new OrderItemResponse( id, productName, quantity, priceAtPurchase, itemTotal );
+
+        return orderItemResponse;
+    }
+}

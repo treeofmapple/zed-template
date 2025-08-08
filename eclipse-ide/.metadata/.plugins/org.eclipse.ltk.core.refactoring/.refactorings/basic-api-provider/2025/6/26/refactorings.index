@@ -1,0 +1,17 @@
+1750787271348	Delete element
+1750787777975	Delete element
+1750787970258	Delete element
+1750788929261	Delete element
+1750791719070	Rename resource 'V1__Init_Database.sql'
+1750794838176	Delete element
+1750795690314	Rename method 'parseDurationReduced'
+1750797037427	Rename method 'getPublicIp'
+1750797046268	Rename method 'getInternalIp'
+1750801092608	Move compilation unit
+1750801127391	Delete element
+1750832630302	Delete element
+1750908749794	Copy files
+1750908757612	Copy folder
+1750908832406	Rename type 'SystemConfigurationUtils'
+1750910271703	Delete element
+1750911243238	Rename method 'parseDurationMiroseconds'

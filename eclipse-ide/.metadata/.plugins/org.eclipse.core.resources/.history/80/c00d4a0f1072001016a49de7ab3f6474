@@ -1,0 +1,27 @@
+package com.tom.backdoor.application.common;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import com.tom.backdoor.application.config.ComponentService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class LockInterceptor implements HandlerInterceptor {
+
+    private final ComponentService componentService;
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if (componentService.isEndpointLocked()) {
+            response.sendError(HttpServletResponse.SC_LOCKED, "This endpoint is temporarily locked.");
+            return false;
+        }
+        
+        return true;
+    }
+}

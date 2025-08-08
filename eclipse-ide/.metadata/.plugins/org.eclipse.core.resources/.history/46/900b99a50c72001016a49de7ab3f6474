@@ -1,0 +1,15 @@
+package com.tom.backdoor.application.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tom.backdoor.application.config.ConfigUtil;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/v1/user")
+@RequiredArgsConstructor
+public class EndpointTest {
+
+}

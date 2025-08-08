@@ -1,0 +1,13 @@
+package com.tom.front.basic.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.filter.ForwardedHeaderFilter;
+
+public class SystemConfigurationUtils {
+
+	@Bean
+	public ForwardedHeaderFilter forwardedHeaderFilter() {
+	    return new ForwardedHeaderFilter();
+	}
+	
+}

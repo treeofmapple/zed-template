@@ -1,0 +1,21 @@
+package updateknowledge.signature;
+
+import java.security.Signature;
+
+import sun.security.provider.SecureRandom;
+
+public class JavaSignature {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public void generateSignature() {
+//		Signature signature = Signature.getInstance("SHA256WithDSA");
+		
+		SecureRandom secureRandom = new SecureRandom();
+		
+	}
+	
+	
+}

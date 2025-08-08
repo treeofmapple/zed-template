@@ -1,0 +1,12 @@
+package com.tom.front.basic.dto;
+
+import java.time.ZonedDateTime;
+
+public record UpdateResponse(
+		
+		Long id,
+		ZonedDateTime updatedAt
+		
+		) {
+
+}

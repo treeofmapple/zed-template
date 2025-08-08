@@ -1,0 +1,160 @@
+package com.tom.service.knowledges.notes;
+
+import com.tom.service.knowledges.attachments.AttachmentMapper;
+import com.tom.service.knowledges.attachments.AttachmentResponse;
+import com.tom.service.knowledges.image.ImageMapper;
+import com.tom.service.knowledges.image.ImageResponse;
+import com.tom.service.knowledges.image.ImageUtils;
+import com.tom.service.knowledges.tag.Tag;
+import com.tom.service.knowledges.tag.TagResponse;
+import com.tom.service.knowledges.tag.TagUtils;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-07-04T02:05:40-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class NoteMapperImpl implements NoteMapper {
+
+    @Autowired
+    private TagUtils tagUtils;
+    @Autowired
+    private ImageUtils imageUtils;
+    @Autowired
+    private AttachmentMapper attachmentMapper;
+    @Autowired
+    private ImageMapper imageMapper;
+
+    @Override
+    public Note build(CreateNoteRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Note note = new Note();
+
+        note.setNotePrivated( request.notePrivated() );
+        note.setImage( imageUtils.findImageById( request.imageId() ) );
+        note.setTags( tagUtils.findOrCreateTagsByNames( request.tags() ) );
+        note.setName( request.name() );
+        note.setDescription( request.description() );
+
+        return note;
+    }
+
+    @Override
+    public void updateNoteFromRequest(Note note, EditNoteRequest request) {
+        if ( request == null ) {
+            return;
+        }
+
+        if ( request.imageId() != null ) {
+            note.setImage( imageUtils.findImageById( request.imageId() ) );
+        }
+        if ( note.getTags() != null ) {
+            Set<Tag> set = tagUtils.findOrCreateTagsByNames( request.tags() );
+            if ( set != null ) {
+                note.getTags().clear();
+                note.getTags().addAll( set );
+            }
+        }
+        else {
+            Set<Tag> set = tagUtils.findOrCreateTagsByNames( request.tags() );
+            if ( set != null ) {
+                note.setTags( set );
+            }
+        }
+        if ( request.name() != null ) {
+            note.setName( request.name() );
+        }
+        if ( request.description() != null ) {
+            note.setDescription( request.description() );
+        }
+        if ( request.notePrivated() != null ) {
+            note.setNotePrivated( request.notePrivated() );
+        }
+    }
+
+    @Override
+    public NoteResponse toResponse(Note note) {
+        if ( note == null ) {
+            return null;
+        }
+
+        Set<AttachmentResponse> attachments = null;
+        String name = null;
+        String description = null;
+        ImageResponse image = null;
+        Boolean notePrivated = null;
+        Set<TagResponse> tags = null;
+        LocalDateTime createdAt = null;
+        LocalDateTime updatedAt = null;
+
+        attachments = attachmentMapper.toResponseSet( note.getAttachments() );
+        name = note.getName();
+        description = note.getDescription();
+        image = imageMapper.toResponse( note.getImage() );
+        notePrivated = note.getNotePrivated();
+        tags = tagSetToTagResponseSet( note.getTags() );
+        createdAt = note.getCreatedAt();
+        updatedAt = note.getUpdatedAt();
+
+        String annotation = note.getAnnotation() != null ? new String(note.getAnnotation(), java.nio.charset.StandardCharsets.UTF_8) : null;
+
+        NoteResponse noteResponse = new NoteResponse( name, description, annotation, image, notePrivated, attachments, tags, createdAt, updatedAt );
+
+        return noteResponse;
+    }
+
+    @Override
+    public List<NoteResponse> toResponseList(List<Note> notes) {
+        if ( notes == null ) {
+            return null;
+        }
+
+        List<NoteResponse> list = new ArrayList<NoteResponse>( notes.size() );
+        for ( Note note : notes ) {
+            list.add( toResponse( note ) );
+        }
+
+        return list;
+    }
+
+    protected TagResponse tagToTagResponse(Tag tag) {
+        if ( tag == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String name = null;
+
+        id = tag.getId();
+        name = tag.getName();
+
+        TagResponse tagResponse = new TagResponse( id, name );
+
+        return tagResponse;
+    }
+
+    protected Set<TagResponse> tagSetToTagResponseSet(Set<Tag> set) {
+        if ( set == null ) {
+            return null;
+        }
+
+        Set<TagResponse> set1 = LinkedHashSet.newLinkedHashSet( set.size() );
+        for ( Tag tag : set ) {
+            set1.add( tagToTagResponse( tag ) );
+        }
+
+        return set1;
+    }
+}

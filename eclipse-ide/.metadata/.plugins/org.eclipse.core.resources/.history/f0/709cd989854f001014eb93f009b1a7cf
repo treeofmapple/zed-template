@@ -1,0 +1,45 @@
+package server;
+
+import server.util.MultiThread;
+import server.util.SingleThread;
+import server.util.ThreadPooled;
+
+public class Main extends Operations {
+
+	public static void main(String[] args) {
+		SingleThreadServer();
+	}
+	
+	
+}
+
+
+class Operations {
+	
+	public static void SingleThreadServer() {
+		SingleThread st = new SingleThread(9000);
+		new Thread(st).start();
+		try {
+			
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Stopping Server");
+		server.stop();
+	}
+
+	public static void MultiThreadServer() {
+		MultiThread mt = new MultiThread(9001);
+		
+		
+	}
+
+	
+	public static void ThreadPooledServer() {
+		ThreadPooled tp = new ThreadPooled(9002);
+		
+		
+	}
+	
+	
+}

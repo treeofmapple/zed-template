@@ -1,0 +1,18 @@
+package updateknowledge.security.key;
+
+public class JavaKeygen {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public void createKeyGen() {
+			
+	}
+	
+	public void initializeSignature() {
+		
+		
+	}
+	
+}

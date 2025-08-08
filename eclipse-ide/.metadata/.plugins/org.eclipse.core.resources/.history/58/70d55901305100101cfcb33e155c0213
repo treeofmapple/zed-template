@@ -1,0 +1,17 @@
+package com.tom.front.basic.dto;
+
+public record BookRequest(
+		
+		String title,
+
+		String author,
+		
+		BigDecimal price,
+		
+		LocalDate publishedDate,
+		
+		Integer stockQuantity
+		
+		) {
+
+}

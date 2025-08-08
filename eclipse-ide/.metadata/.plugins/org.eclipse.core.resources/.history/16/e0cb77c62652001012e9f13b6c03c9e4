@@ -1,0 +1,13 @@
+package com.tom.front.basic;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BasicApiProviderApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

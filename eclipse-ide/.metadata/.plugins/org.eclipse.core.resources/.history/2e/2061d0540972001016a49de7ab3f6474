@@ -1,0 +1,25 @@
+package com.tom.backdoor.server.config;
+
+import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+@Component
+@RequiredArgsConstructor
+public class ConfigUtil {
+	
+	public String stopService() {
+		
+		
+		return log.info("Service Stopped");
+	}
+	
+	public String clearData() {
+		
+		
+		return "BackStopped";
+	}
+	
+}

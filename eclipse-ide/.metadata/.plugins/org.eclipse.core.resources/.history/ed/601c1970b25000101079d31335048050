@@ -1,0 +1,9 @@
+package updateknowledge.security.index;
+
+public class CryptoApi {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

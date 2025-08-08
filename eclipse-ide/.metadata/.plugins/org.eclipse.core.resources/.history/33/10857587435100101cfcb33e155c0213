@@ -1,0 +1,5 @@
+package com.tom.front.basic.controller;
+
+public record UpdateRequest() {
+
+}

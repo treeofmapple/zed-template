@@ -1,0 +1,9 @@
+package com.tom.front.basic.dto;
+
+public record DataRequest(
+		
+		LocalDate publishedDate
+		
+		) {
+
+}

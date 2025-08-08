@@ -1,0 +1,68 @@
+package com.tom.backdoor.application.config;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+import com.tom.backdoor.application.common.SecurityUtils;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
+@Component
+@RequiredArgsConstructor
+public class ConfigUtil {
+
+	// create a file like lock file and make it unable to access the endpoints
+	// then send these info to another spring boot service 
+	
+	private final SecurityUtils securityUtils;
+	private final Environment environment;
+	
+	public void stopService() {
+		String appName = environment.getProperty("spring.application.name", "Unnamed App");
+		String systemIp = securityUtils.getRequestingClientIp();
+	
+		
+		createLockFile();
+		
+	}
+	
+	public void clearData() {
+		String appName = environment.getProperty("spring.application.name", "Unnamed App");
+		String systemIp = securityUtils.getRequestingClientIp();
+
+		
+		removeLockFile();
+		
+	}
+	
+	
+	public void createLockFile() {
+		Path path = Paths.get("file.lock");
+		try {
+			Files.createFile(path);
+		} catch(IOException e) {
+		}
+	}
+	
+	public void removeLockFile() {
+		Path path = Paths.get("file.lock");
+		try {
+			Files.deleteIfExists(path);
+		} catch(IOException e) {
+		}
+	}
+	
+	public boolean checkLockFile() {
+		Path path = Paths.get("file.lock");
+		if(Files.exists(path)) {
+			return true;
+		}
+	}
+}

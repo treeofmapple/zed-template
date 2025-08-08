@@ -1,0 +1,5 @@
+package com.tom.front.full.config;
+
+public class SecurityConfig {
+
+}

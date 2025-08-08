@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FlywayConfig.java&apos; to &apos;awstest/src/main/java/com.tom.aws.awstest.config&apos;&#x0D;&#x0A;- Original project: &apos;management&apos;&#x0D;&#x0A;- Destination element: &apos;awstest/src/main/java/com.tom.aws.awstest.config&apos;&#x0D;&#x0A;- Original element: &apos;com.tom.management.config.FlywayConfig.java&apos;" description="Copy compilation unit" destination="=awstest/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tom.aws.awstest.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tom.management.config{FlywayConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1752008318661" units="1" version="1.0"/>
+</session>

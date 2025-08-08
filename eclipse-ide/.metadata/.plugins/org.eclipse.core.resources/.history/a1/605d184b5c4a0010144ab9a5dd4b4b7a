@@ -1,0 +1,202 @@
+package streams;
+
+public class sample {
+	public static void main(String[] args) {
+		List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Anna", "Ben");
+
+		System.out.println("Original names: " + names);
+
+		// --- Filter and Map ---
+		// Get names starting with 'A' and convert to uppercase
+		List<String> filteredAndMappedNames = names.stream().filter(name -> name.startsWith("A")) // Intermediate
+																									// operation
+				.map(String::toUpperCase) // Intermediate operation
+				.collect(Collectors.toList()); // Terminal operation
+		System.out.println("Names starting with 'A' (uppercase): " + filteredAndMappedNames); // [ALICE, ANNA]
+
+		// --- Sorting ---
+		List<String> sortedNames = names.stream().sorted() // Natural order sorting
+				.collect(Collectors.toList());
+		System.out.println("Sorted names: " + sortedNames); // [Alice, Anna, Ben, Bob, Charlie, David]
+
+		// --- Counting ---
+		long countOfNamesWithLength5 = names.stream().filter(name -> name.length() == 5).count(); // Terminal operation
+		System.out.println("Number of names with length 5: " + countOfNamesWithLength5); // 2 (Alice, David)
+
+		// --- Reduction (summing lengths) ---
+		Optional<Integer> totalLengthOptional = names.stream().map(String::length) // Stream of integers (lengths)
+				.reduce(Integer::sum); // Terminal operation
+		totalLengthOptional.ifPresent(totalLength -> System.out.println("Total length of all names: " + totalLength)); // 30
+
+		// --- Grouping ---
+		Map<Character, List<String>> namesByFirstLetter = names.stream()
+				.collect(Collectors.groupingBy(name -> name.charAt(0)));
+		System.out.println("Names grouped by first letter: " + namesByFirstLetter);
+		// {A=[Alice, Anna], B=[Bob, Ben], C=[Charlie], D=[David]}
+
+		// --- FlatMap (for streams of streams) ---
+		List<List<String>> listOfLists = Arrays.asList(Arrays.asList("apple", "banana"),
+				Arrays.asList("orange", "grape"), Arrays.asList("kiwi"));
+
+		List<String> allFruits = listOfLists.stream().flatMap(List::stream) // Flattens streams into a single stream
+				.collect(Collectors.toList());
+		System.out.println("All fruits (flattened): " + allFruits); // [apple, banana, orange, grape, kiwi]
+	}
+}3. Mutability,Immutability,
+
+and the
+final Keyword These
+concepts are crucial for
+writing robust, thread-safe,
+and predictable code.
+
+Mutability:
+An object
+is mutable if
+
+its state (the values of its fields) can be changed after it is created.
+	Immutability: An object is immutable if its state cannot be changed once it has been created.
+	final Keyword:
+	final variable: The variable's value can be assigned only once.
+	For primitives, the value itself is constant.
+	For object references, the reference is constant, meaning it cannot be re-assigned to point to another object. The object it points to can still be mutable.
+	final method: Cannot be overridden by subclasses.
+	final class: Cannot be subclassed.
+	Benefits of Immutability:
+
+	Thread Safety: Immutable objects are inherently thread-safe because their state cannot change, eliminating race conditions.
+	Simplicity: Easier to reason about, test, and debug.
+	Caching: Can be safely cached and reused.
+	Security: Prevents unintended modification.
+	Example: Mutable vs. Immutable Objects with final
+
+	Java
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+// --- Mutable Class Example ---
+class MutablePoint {
+	private int x;
+	private int y;
+
+	public MutablePoint(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	} // Setters allow state change
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	@Override
+	public String toString() {
+		return "MutablePoint(" + x + ", " + y + ")";
+	}
+}
+
+// --- Immutable Class Example ---
+// Rules for Immutability:
+// 1. All fields are private and final.
+// 2. No setter methods.
+// 3. The class itself is final (optional, but good practice to prevent
+// subclassing that could break immutability).
+// 4. If the class holds references to mutable objects, create defensive copies
+// in the constructor and getters.
+final class ImmutablePoint {
+	private final int x;
+	private final int y;
+	private final List<String> tags; // Example: a mutable field within an immutable class
+
+	public ImmutablePoint(int x, int y, List<String> tags) {
+		this.x = x;
+		this.y = y;
+		// Defensive copy for mutable objects passed in
+		this.tags = new ArrayList<>(tags); // Create a new list, don't use the passed-in reference directly
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public List<String> getTags() {
+		// Defensive copy for mutable objects returned
+		return Collections.unmodifiableList(tags); // Return an unmodifiable view
+	}
+
+	@Override
+	public String toString() {
+		return "ImmutablePoint(" + x + ", " + y + ", tags=" + tags + ")";
+	}
+}
+
+public class ImmutabilityExample {
+	public static void main(String[] args) {
+		System.out.println("--- Mutable Object Example ---");
+		MutablePoint p1 = new MutablePoint(1, 2);
+		System.out.println("Initial p1: " + p1); // MutablePoint(1, 2)
+
+		p1.setX(10);
+		System.out.println("Modified p1: " + p1); // MutablePoint(10, 2)
+
+		// --- Immutable Object Example ---
+		System.out.println("\n--- Immutable Object Example ---");
+		List<String> initialTags = new ArrayList<>();
+		initialTags.add("geo");
+		ImmutablePoint ip1 = new ImmutablePoint(5, 7, initialTags);
+		System.out.println("Initial ip1: " + ip1); // ImmutablePoint(5, 7, tags=[geo])
+
+		// Attempting to change fields (compile-time error if no setters exist)
+		// ip1.setX(20); // Compiler error: Cannot find symbol
+
+		// Demonstrating defensive copy for mutable fields within an immutable class
+		initialTags.add("location"); // This change won't affect ip1's tags
+		System.out.println("Initial tags list modified: " + initialTags);
+		System.out.println("ip1 after initial tags modified: " + ip1); // ip1 still has [geo]
+
+		List<String> retrievedTags = ip1.getTags();
+		// retrievedTags.add("newtag"); // Runtime error: UnsupportedOperationException
+		// (due to unmodifiableList)
+		System.out.println("Retrieved tags from ip1: " + retrievedTags);
+
+		// --- final keyword examples ---
+		System.out.println("\n--- final Keyword Examples ---");
+		final int constantValue = 100;
+		// constantValue = 200; // Compile-time error: Cannot assign a value to final
+		// variable constantValue
+		System.out.println("Final primitive: " + constantValue);
+
+		final List<String> finalList = new ArrayList<>();
+		finalList.add("item1");
+		finalList.add("item2");
+		System.out.println("Final list: " + finalList); // [item1, item2]
+
+		// finalList = new ArrayList<>(); // Compile-time error: Cannot assign a value
+		// to final variable finalList
+		finalList.add("item3"); // Allowed, as the *object itself* is mutable
+		System.out.println("Final list after adding item: " + finalList); // [item1, item2, item3]
+
+		final ImmutablePoint finalImmutablePoint = new ImmutablePoint(1, 1, List.of("fixed"));
+		// finalImmutablePoint = new ImmutablePoint(2, 2, List.of("new")); //
+		// Compile-time error
+		System.out.println("Final ImmutablePoint: " + finalImmutablePoint);
+		// The object itself is immutable, and the reference is also final.
+	}
+}

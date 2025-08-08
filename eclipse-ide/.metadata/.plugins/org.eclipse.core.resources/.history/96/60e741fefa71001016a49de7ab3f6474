@@ -1,0 +1,52 @@
+package com.tom.front.full.service;
+
+import java.util.Random;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Component;
+
+import com.tom.front.full.model.Employee;
+import com.tom.front.full.repository.EmployeeRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class EmployeeUtils {
+
+	private final EmployeeRepository repository;
+
+	public Employee findById(long query) {
+		return repository.findById(query).orElseThrow(() -> {
+			throw new RuntimeException("");
+		});
+	}
+
+	public void ensureNameAreUnique(String name) {
+		if (repository.existsByName(name)) {
+			throw new RuntimeException("Already Exists");
+		}
+	}
+
+	public void checkIfNameIsTaken(Employee currentEmployee, String name) {
+	    if (!currentEmployee.getName().equalsIgnoreCase(name)) {
+			if (repository.existsByNameAndIdNot(name, currentEmployee.getId())) {
+				throw new RuntimeException("");
+			}
+	    }
+	}
+	
+	public String generateEmployeeCode() {
+		final String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		int codeLength = 8; 
+
+		repository.findByEmployeeCode(ALLOWED_CHARACTERS).
+		Random random = new Random();
+		
+		return random.ints(codeLength, 0, ALLOWED_CHARACTERS.length())
+				.mapToObj(ALLOWED_CHARACTERS::charAt)
+				.map(Object::toString)
+				.collect(Collectors.joining());
+	}
+	
+}

@@ -1,0 +1,12 @@
+
+
+public class Snippet {
+	public void mergeEstablishment(Establishment place, EstablishmentUpdate request) {
+		place.setName(request.name());
+		place.setCnpj(request.cnpj());
+		place.setAddress(request.address());
+		place.setTelephone(request.phone());
+		place.setVacanciesMotorcycles(request.motorcycleSpotCount());
+		place.setVacanciesCars(request.carSpotCount());
+	}
+}

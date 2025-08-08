@@ -1,0 +1,80 @@
+package com.tom.front.basic.config;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.tom.front.basic.common.SystemUtils;
+
+import io.github.bucket4j.Bandwidth;
+import io.github.bucket4j.Bucket;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Configuration
+public class RateLimitFilter extends OncePerRequestFilter {
+
+	@Value("${application.rate.limit:10}")
+	private int rateLimit;
+	
+	@Value("${application.rate.refil.time:30S}")
+	private String timeLimit;
+
+	@Value("${}")
+	private final String cacheName;
+	
+	private final Cache rateLimitCache;
+	
+	private final SystemUtils utils;
+	
+	public RateLimitFilter(CacheManager cacheManager) {
+		this.rateLimitCache = cacheManager.getCache()
+	}
+
+
+    private Bucket createNewBucket() {
+    	Bandwidth limit = Bandwidth.builder()
+    			.capacity(rateLimit)
+    			.refillGreedy(rateLimit, Duration.ofSeconds(utils.parseDurationSeconds(timeLimit)))
+    			.build();
+    	
+        return Bucket.builder()
+                .addLimit(limit)
+                .build();
+    }
+    
+    @Override
+    protected void doFilterInternal(@NonNull HttpServletRequest request,
+    								@NonNull HttpServletResponse response,
+									@NonNull FilterChain filterChain)
+            throws ServletException, IOException {
+
+        String ip = resolveClientIp(request);
+        Bucket bucket = buckets.computeIfAbsent(ip, k -> createNewBucket());
+        
+        if (bucket.tryConsume(1)) {
+            filterChain.doFilter(request, response);
+        } else {
+        	response.setContentType("text/plain");
+            response.setStatus(429);
+            response.getWriter().write("Too many requests - try again later.");
+        }
+    }
+    
+    private String resolveClientIp(HttpServletRequest request) {
+        String xffHeader = request.getHeader("X-Forwarded-For");
+        if (xffHeader == null || xffHeader.isEmpty()) {
+            return request.getRemoteAddr();
+        }
+        return xffHeader.split(",")[0].trim();
+    }
+    
+}

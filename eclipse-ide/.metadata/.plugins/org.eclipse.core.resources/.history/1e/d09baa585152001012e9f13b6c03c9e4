@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: console, database, service
+  application:
+      name: front-end-test-first-basic
+
+server:
+  port: ${SERVER_PORT:8000}

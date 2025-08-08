@@ -1,0 +1,19 @@
+package com.tom.front.authbasic.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class CorsConfig {
+
+    @Value("${application.cors.allowed-origins}")
+    private String[] allowedOrigins;
+	
+	@Value("${application.cors.time:3600}")
+	private Long corsTime;
+	
+	
+	
+	
+	
+}

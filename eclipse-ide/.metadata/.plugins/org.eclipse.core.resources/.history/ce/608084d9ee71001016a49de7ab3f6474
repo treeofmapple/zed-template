@@ -1,0 +1,8 @@
+package com.tom.backdoor.application.config;
+
+public class Snippet {
+	public static void main(String[] args) {
+		BaseController
+	}
+}
+

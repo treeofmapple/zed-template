@@ -1,0 +1,29 @@
+package com.tom.backdoor.application.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.tom.backdoor.application.common.interceptor.InternalInterceptor;
+import com.tom.backdoor.application.common.interceptor.LockInterceptor;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@RequiredArgsConstructor
+public class WebConfig implements WebMvcConfigurer {
+
+	private final LockInterceptor lockInterceptor;
+	private final InternalInterceptor internalInterceptor;
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(lockInterceptor)
+				 .addPathPatterns("/v1/user/**");
+		
+		registry.addInterceptor(apiKeyInterceptor)
+        	.addPathPatterns("/v1/internal/**",);
+	}
+	
+	
+}

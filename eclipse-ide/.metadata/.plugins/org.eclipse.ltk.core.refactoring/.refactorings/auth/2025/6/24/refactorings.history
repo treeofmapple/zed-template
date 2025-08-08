@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RateLimitFilter.java&apos; to &apos;knowledge/src/main/java/com.tom.service.knowledges.config&apos;&#x0D;&#x0A;- Original project: &apos;auth&apos;&#x0D;&#x0A;- Destination element: &apos;knowledge/src/main/java/com.tom.service.knowledges.config&apos;&#x0D;&#x0A;- Original element: &apos;com.tom.sample.auth.config.RateLimitFilter.java&apos;" description="Copy compilation unit" destination="=knowledge/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tom.service.knowledges.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tom.sample.auth.config{RateLimitFilter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1749605075709" units="1" version="1.0"/>
+</session>

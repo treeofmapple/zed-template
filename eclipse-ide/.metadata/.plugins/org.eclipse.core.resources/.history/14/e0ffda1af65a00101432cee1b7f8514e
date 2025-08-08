@@ -1,0 +1,102 @@
+package com.tom.service.knowledges.security;
+
+import com.tom.service.knowledges.user.RegisterRequest;
+import com.tom.service.knowledges.user.UpdateRequest;
+import com.tom.service.knowledges.user.User;
+import com.tom.service.knowledges.user.UserResponse;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-07-04T02:05:40-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class AuthenticationMapperImpl implements AuthenticationMapper {
+
+    @Override
+    public User toUser(RegisterRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        User user = new User();
+
+        user.setName( request.name() );
+        user.setUsername( request.username() );
+        user.setEmail( request.email() );
+        user.setAge( request.age() );
+
+        return user;
+    }
+
+    @Override
+    public Token buildToken(User user, String token, TokenType tokenType, boolean revoked, boolean expired) {
+        if ( user == null && token == null && tokenType == null ) {
+            return null;
+        }
+
+        Token token1 = new Token();
+
+        if ( user != null ) {
+            token1.setCreatedAt( user.getCreatedAt() );
+            token1.setUpdatedAt( user.getUpdatedAt() );
+        }
+        token1.setToken( token );
+        token1.setTokenType( tokenType );
+        token1.setRevoked( revoked );
+        token1.setExpired( expired );
+
+        return token1;
+    }
+
+    @Override
+    public UserResponse toUserResponse(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        String name = null;
+        String username = null;
+        String email = null;
+
+        name = user.getName();
+        username = user.getUsername();
+        email = user.getEmail();
+
+        UserResponse userResponse = new UserResponse( name, username, email );
+
+        return userResponse;
+    }
+
+    @Override
+    public AuthenticationResponse toAuthenticationResponse(String jwtToken, String refreshToken) {
+        if ( jwtToken == null && refreshToken == null ) {
+            return null;
+        }
+
+        String accessToken = null;
+        accessToken = jwtToken;
+        String refreshToken1 = null;
+        refreshToken1 = refreshToken;
+
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse( accessToken, refreshToken1 );
+
+        return authenticationResponse;
+    }
+
+    @Override
+    public User mergeUser(User users, UpdateRequest request) {
+        if ( request == null ) {
+            return users;
+        }
+
+        users.setUsername( request.username() );
+        users.setEmail( request.email() );
+        users.setAge( request.age() );
+        users.setPassword( request.password() );
+
+        return users;
+    }
+}

@@ -1,0 +1,30 @@
+package com.tom.front.full.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            // 1. Tell Spring Security to use the CorsConfigurationSource bean
+            .cors(withDefaults())
+            
+            // 2. Disable CSRF for stateless REST APIs
+            .csrf(csrf -> csrf.disable())
+            
+            // 3. Define authorization rules (start with allowing all requests)
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/**").permitAll() // Allow all requests for now
+                .anyRequest().authenticated()
+            );
+
+        return http.build();
+    }
+	
+	
+	
+}

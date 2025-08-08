@@ -1,0 +1,95 @@
+package server.util;
+
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class SingleThread extends Variables implements Runnable {
+	
+	private Operations opt = new Operations();
+	
+	public SingleThread(int port) {
+		 this.serverPort = port;
+	}
+	
+	public void run() {
+		synchronized (runningThread) {
+			this.runningThread = Thread.currentThread();
+		}
+		
+		opt.openServerSocket();
+		
+		while(!opt.IsStopped()) {
+			Socket clientSocket = null;
+			try {
+				clientSocket = this.serverSocket.accept();
+			} catch (IOException e) {
+				if(opt.IsStopped()) {
+					System.out.println("Server Stopped");
+					return;
+				}
+				throw new RuntimeException("Error Accepting the connection", e);
+			}
+			try {
+				opt.processClientRequest(clientSocket);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+		System.out.println("Server Stopped");
+	}
+	
+}
+
+
+class Variables {
+
+	protected int serverPort = 8080;
+	protected ServerSocket serverSocket = null;
+	protected boolean isStopped = false;
+	protected Thread runningThread = null;
+	
+}
+
+class Operations extends Variables {
+	
+	
+	
+	
+	
+	
+	
+	public synchronized boolean IsStopped() {
+		return this.isStopped;
+	}
+	
+	public void processClientRequest(Socket clientSocket) throws Exception {
+			
+		
+	}
+
+	public synchronized void stop() {
+		this.isStopped = true;
+		try {
+			this.serverSocket.close();
+		} catch(IOException e) {
+			throw new RuntimeException("Error closing server", e);
+		}
+	}
+	
+	protected void openServerSocket() {
+		try {
+			this.serverSocket = new ServerSocket(this.serverPort);
+		} catch(IOException e) {
+			throw new RuntimeException("Cannot open port " + serverPort, e);
+		}
+	}
+	
+}
+
+
+
+
+
+

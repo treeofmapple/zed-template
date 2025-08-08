@@ -1,0 +1,36 @@
+1748172863845	Delete elements
+1748271218457	Delete element
+1748271476721	Rename type 'TagUtil'
+1748271957278	Rename method 'findByName'
+1748281062163	Rename package 'com.tom.service.knowledges.image'
+1748283454566	Rename type 'Notes'
+1748283460129	Rename type 'NotesController'
+1748283469144	Rename type 'NotesMapper'
+1748283473736	Rename type 'NotesRepository'
+1748283477615	Rename type 'NotesResponse'
+1748283481240	Rename type 'NotesService'
+1748283485376	Rename type 'NotesUtils'
+1748286303562	Rename package 'com.tom.service.knowledges.file'
+1748287060190	Rename type 'Image'
+1748289425669	Rename type 'ImageController'
+1748289439297	Delete element
+1748289447743	Rename type 'ImageMapper'
+1748289461436	Rename type 'ImagePageResponse'
+1748289473454	Rename type 'ImageRepository'
+1748289480276	Rename type 'ImageResponse'
+1748289487161	Rename type 'ImageService'
+1748289495975	Rename type 'ImageSummary'
+1748289503547	Rename type 'ImageUtils'
+1748290296865	Delete element
+1748294333822	Move compilation unit
+1748294498557	Move compilation unit
+1748294596393	Move compilation units
+1748295691753	Rename method 'findByUsernameOrEmailContainingIgnoreCase'
+1748296722017	Delete element
+1748352338078	Delete element
+1748352358479	Rename type 'UserUtil'
+1748356522863	Rename method 'fromImage'
+1748356533545	Rename method 'fromPage'
+1748359256731	Rename type 'TagResponse'
+1748360693610	Rename field 'operations'
+1748363267565	Rename method 'findByNameContainingIgnoreCase'

@@ -1,0 +1,5 @@
+package com.tom.front.authbasic.mapper;
+
+public interface BookMapper {
+
+}

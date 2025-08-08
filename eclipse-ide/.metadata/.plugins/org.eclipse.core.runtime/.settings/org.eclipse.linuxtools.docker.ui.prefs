@@ -1,0 +1,6 @@
+dockerComposeInstallDir=C\:\\Program Files\\Docker\\cli-plugins
+eclipse.preferences.version=1
+filterWithLabels=false
+showAllContainers=true
+showAllImages=false
+vmDriverInstallDir=C\:\\Program Files\\Docker Toolbox

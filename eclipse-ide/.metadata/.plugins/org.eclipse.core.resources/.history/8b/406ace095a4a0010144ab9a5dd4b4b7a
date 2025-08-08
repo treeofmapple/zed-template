@@ -1,0 +1,48 @@
+package concurrency;
+
+class threadSyncronization {
+
+	public static void main(String[] args) {
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+}
+
+class counter {
+	
+	private int count = 0; 
+	private final Object lock = new Object();
+	
+    // Method using synchronized keyword for thread safety
+    public void incrementSynchronized() {
+        synchronized (lock) { // Synchronize on a specific object
+            count++;
+        }
+    }
+
+    // Method using synchronized method for thread safety
+    public synchronized void incrementSynchronizedMethod() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+	
+}
+
+class atomicCounter {
+	
+	
+	
+}
+
+
+
+

@@ -1,0 +1,5 @@
+package com.tom.front.basic.common;
+
+public class IsbnGenerator {
+
+}

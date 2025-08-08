@@ -1,0 +1,9 @@
+package updateknowledge;
+
+import updateknowledge.util.GenericsFactory;
+
+public class InstantiationGenerics {
+
+	GenericsFactory<InstantiationGenerics> a = new GenericsFactory<InstantiationGenerics>(InstantiationGenerics.class);
+	
+}

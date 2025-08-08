@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: console, database, service
+  application:
+      name: basic-api-provider
+
+server:
+  port: ${SERVER_PORT:8000}

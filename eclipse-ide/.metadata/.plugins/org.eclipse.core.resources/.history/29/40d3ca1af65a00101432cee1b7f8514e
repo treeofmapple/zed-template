@@ -1,0 +1,60 @@
+package com.tom.service.knowledges.image;
+
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-07-04T02:05:40-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class ImageMapperImpl implements ImageMapper {
+
+    @Override
+    public ImageResponse toResponse(Image image) {
+        if ( image == null ) {
+            return null;
+        }
+
+        String name = null;
+        String objectUrl = null;
+        String contentType = null;
+        long size = 0L;
+
+        name = image.getName();
+        objectUrl = image.getObjectUrl();
+        contentType = image.getContentType();
+        if ( image.getSize() != null ) {
+            size = image.getSize();
+        }
+
+        ImageResponse imageResponse = new ImageResponse( name, objectUrl, contentType, size );
+
+        return imageResponse;
+    }
+
+    @Override
+    public void mergeFromMultipartFile(Image Images, MultipartFile file, String key, String url) {
+        if ( file == null && key == null && url == null ) {
+            return;
+        }
+
+        if ( file != null ) {
+            if ( file.getOriginalFilename() != null ) {
+                Images.setName( file.getOriginalFilename() );
+            }
+            if ( file.getContentType() != null ) {
+                Images.setContentType( file.getContentType() );
+            }
+            Images.setSize( file.getSize() );
+        }
+        if ( key != null ) {
+            Images.setObjectKey( key );
+        }
+        if ( url != null ) {
+            Images.setObjectUrl( url );
+        }
+    }
+}

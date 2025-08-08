@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.buildship:3.1.10.v20240802-1314"/>
+		<item value="org.eclipse.egit:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.emf.common:2.35.0.v20250401-0947"/>
+		<item value="org.eclipse.emf.ecore:2.40.0.v20250414-1351"/>
+		<item value="org.eclipse.epp.mpc:1.12.1.v20250508-2126"/>
+		<item value="org.eclipse.fx.ide.css.feature:3.8.0.202204150904"/>
+		<item value="org.eclipse.help:2.3.2200.v20250528-1830"/>
+		<item value="org.eclipse.jdt:3.20.200.v20250528-1830"/>
+		<item value="org.eclipse.jgit.gpg.bc:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.jgit.http.apache:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.jgit.lfs:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.jgit:7.3.0.202506031305-r"/>
+		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.37.0.v202501090237"/>
+		<item value="org.eclipse.justj.openjdk.hotspot.jre.full:21.0.7.v20250502-0916"/>
+		<item value="org.eclipse.m2e.feature:2.9.0.20250514-0352"/>
+		<item value="org.eclipse.m2e.logback.feature:2.7.100.20250418-1315"/>
+		<item value="org.eclipse.m2e.wtp.feature:1.6.1.20231024-1618"/>
+		<item value="org.eclipse.mylyn.wikitext.feature:4.7.0.v20250513-1805"/>
+		<item value="org.eclipse.pde:3.16.300.v20250528-1830"/>
+		<item value="org.eclipse.platform:4.36.0.v20250528-2229"/>
+		<item value="org.eclipse.rcp:4.36.0.v20250528-1830"/>
+		<item value="org.eclipse.wst.common.fproj:3.7.4.v202501090237"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.37.0.v202503020853"/>
+		<item value="org.eclipse.xtend.lib:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtend.sdk:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.sdk:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.ui:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.xbase.lib:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.xbase:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.xtext.ui.graph:2.39.0.v20250527-0725"/>
+		<item value="org.eclipse.xtext.xtext.ui:2.39.0.v20250527-0725"/>
+		<item value="org.jboss.tools.m2e.wro4j.feature:1.2.1.202301111328"/>
+		<item value="org.sf.feeling.decompiler.cfr:3.5.1"/>
+		<item value="org.sf.feeling.decompiler.fernflower:3.5.1"/>
+		<item value="org.sf.feeling.decompiler.jd:3.5.1"/>
+		<item value="org.sf.feeling.decompiler.procyon:3.5.1"/>
+		<item value="org.sf.feeling.decompiler.vineflower:3.5.1"/>
+		<item value="org.sf.feeling.decompiler:3.5.1"/>
+		<item value="org.sonatype.m2e.egit.feature:0.17.0.202209271423"/>
+	</list>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-fullstack"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-fullstack\full-stact-learning"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\front-private\hello-second"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-vehicle"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-connection-test"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-connection-test\kafka-consumer"/>
+			<item value="C:\Users\lapiz\eclipse-workspace\kafka-producers"/>
+			<item value="C:\Users\lapiz\eclipse-workspace\kafka-producer"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\front-private\frontend-api-call\user-front-basic"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-samples\security-samples\monolithic-auth"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\front-private\frontend-api-call\user-front-advanced"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\front-private\frontend-api-call\basic-api-provider"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-samples\security-samples"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-knowledge-platform"/>
+			<item value="/media/zorin/0ECC4A97CC4A794B/Users/lapiz/Documents/GitHub/front-private/frontend-api-call"/>
+			<item value="C:\Users\lapiz\eclipse-workspace\flyway"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-benchmark-sample\first-sample"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-knowledge-platform\knowledge"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-connection-test\awstest"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-databatch"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-samples\security-samples\auth-old"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-connection-test\backend"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\front-private\frontend-api-call"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-learning"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-learning\datajpa"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\-coding\java\multithreading"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\-coding\java"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\spring-knowledge-platform\backend"/>
+			<item value="C:\Users\lapiz\Documents\Projects\YouTube-tutorials"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\java"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\aws-connection-test"/>
+			<item value="C:\Users\lapiz\Documents\Projects\oreon-engine\oreonengine"/>
+			<item value="C:\Users\lapiz\Documents\Projects\oreon-engine-main\oreonengine"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\java\Java_games"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\benchmark-sample\microsservice"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\benchmark-sample"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\databatch-ai-gen"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\Spring-examples\Security-Example\auth"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\climate-monitoring-system"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\knowledge_platform"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\Service-tts-speech_module"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\aws-connection-test\Main"/>
+			<item value="C:\Users\lapiz\Documents\GitHub\aws-connection-learning\Main"/>
+			<item value="C:\Users\Lapiz\eclipse-workspace"/>
+			<item value="C:\Users\Lapiz\eclipse-workspace\Gestão_Espaco_Fisico"/>
+			<item value="C:\Users\Lapiz\eclipse-workspaces\Leet-Code"/>
+		</list>
+		<section name="SmartImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="706"/>
+			<item key="DIALOG_Y_ORIGIN" value="191"/>
+			<item key="DIALOG_WIDTH" value="885"/>
+			<item key="DIALOG_HEIGHT" value="629"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="org.eclipse.text.quicksearch.internal.ui.QuickSearchDialog.DIALOG_SETTINGS">
+		<item key="LAST_QUERY" value="cors.allowed-origins"/>
+		<item key="CASE_SENSITIVE" value="false"/>
+		<item key="KEEP_OPEN" value="false"/>
+		<list key="FILTER_HISTORY">
+			<item value=""/>
+		</list>
+		<list key="COLUMN_WIDTHS">
+			<item value="40"/>
+			<item value="400"/>
+			<item value="514"/>
+		</list>
+		<list key="SASH_WEIGHTS">
+			<item value="350"/>
+			<item value="649"/>
+		</list>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="764"/>
+			<item key="DIALOG_WIDTH" value="1011"/>
+			<item key="DIALOG_X_ORIGIN" value="530"/>
+			<item key="DIALOG_Y_ORIGIN" value="205"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="676"/>
+		<item key="DIALOG_Y_ORIGIN" value="341"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<item key="ShowDerived" value="false"/>
+		<item key="FilterByLocation" value="false"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="668"/>
+			<item key="DIALOG_Y_ORIGIN" value="195"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+</section>

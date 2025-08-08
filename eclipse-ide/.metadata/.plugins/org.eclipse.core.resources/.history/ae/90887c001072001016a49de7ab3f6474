@@ -1,0 +1,16 @@
+package com.tom.backdoor.application.common;
+
+public class LockInterceptor implements HandlerInterceptor {
+
+    private final ComponentService componentService;
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if (componentService.isEndpointLocked()) {
+            response.sendError(HttpServletResponse.SC_LOCKED, "This endpoint is temporarily locked.");
+            return false;
+        }
+        
+        return true;
+    }
+}

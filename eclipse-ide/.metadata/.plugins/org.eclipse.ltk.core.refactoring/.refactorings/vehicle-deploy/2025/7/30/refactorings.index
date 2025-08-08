@@ -1,0 +1,18 @@
+1753030648171	Rename type 'VehicleUtil'
+1753032158757	Copy package
+1753032162105	Delete element
+1753043016523	Move compilation unit
+1753043102092	Delete element
+1753043103263	Delete element
+1753043112699	Delete element
+1753045436474	Delete elements
+1753052535766	Rename package 'com.tom.first.vehicle.request'
+1753090804089	Rename type 'VehicleSpecialization'
+1753124387430	Rename local variable 'data'
+1753124721935	Rename field 'repository'
+1753129648848	Rename local variable 'brand'
+1753129654534	Rename method 'ensureAreBrandUnique'
+1753131818758	Rename local variable 'establishment'
+1753131824415	Rename local variable 'responjse'
+1753137536579	Delete element
+1753321466241	Rename resource 'application-git.yml'

@@ -1,0 +1,36 @@
+# JMH version: 1.37
+# VM version: JDK 21.0.7, OpenJDK 64-Bit Server VM, 21.0.7+9-LTS
+# VM invoker: C:\Program Files\BellSoft\LibericaJDK-21-Full\bin\java.exe
+# VM options: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=54870 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=order -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 5 s each
+# Measurement: 20 iterations, 5 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: com.tom.benchmark.order.benchmark.JpaBenchmark.createAndSave
+
+# Run progress: 0,00% complete, ETA 00:08:20
+# Fork: N/A, test runs in the host VM
+# *** WARNING: Non-forked runs may silently omit JVM options, mess up profilers, disable compiler hints, etc. ***
+# *** WARNING: Use non-forked runs only for debugging purposes, not for actual performance runs. ***
+# Warmup Iteration   1: 440740,388 ops/ms
+# Warmup Iteration   2: 491355,550 ops/ms
+# Warmup Iteration   3: 491485,562 ops/ms
+# Warmup Iteration   4: 490381,187 ops/ms
+# Warmup Iteration   5: 490034,851 ops/ms
+Iteration   1: 489035,871 ops/ms
+Iteration   2: 491218,337 ops/ms
+Iteration   3: 491665,588 ops/ms
+Iteration   4: 477497,933 ops/ms
+Iteration   5: 491320,708 ops/ms
+Iteration   6: 489961,411 ops/ms
+Iteration   7: 489659,837 ops/ms
+Iteration   8: 490828,561 ops/ms
+Iteration   9: 490582,486 ops/ms
+Iteration  10: 490101,828 ops/ms
+Iteration  11: 491339,746 ops/ms
+Iteration  12: 487463,797 ops/ms
+Iteration  13: 439681,546 ops/ms
+Iteration  14: 483554,529 ops/ms
+Iteration  15: 

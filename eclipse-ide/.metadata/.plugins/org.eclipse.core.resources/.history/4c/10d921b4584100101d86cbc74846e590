@@ -1,0 +1,31 @@
+package com.tom.benchmark.order.benchmark;
+
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.VerboseMode;
+
+import com.tom.benchmark.monolith.benchmark.JpaBenchmark;
+
+public class BenchmarkRunner {
+
+    public static void main(String[] args) throws RunnerException {
+
+        String outputFolder = System.getenv("OUTPUT_FOLDER");
+
+        if (outputFolder == null || outputFolder.isEmpty()) {
+            outputFolder = "";
+        } else if (!outputFolder.endsWith("/")) {
+            outputFolder = outputFolder + "/";
+        }
+
+        Options opt = new OptionsBuilder()
+                .include(JpaBenchmark.class.getSimpleName())
+                .output(outputFolder + "jmh_results.txt")
+                .verbosity(VerboseMode.EXTRA)
+                .build();
+
+        new Runner(opt).run();
+    }	
+}

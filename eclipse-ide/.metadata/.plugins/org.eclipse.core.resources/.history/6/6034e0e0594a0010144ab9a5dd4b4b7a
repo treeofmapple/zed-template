@@ -1,0 +1,32 @@
+package concurrency;
+
+class threadSyncronization {
+
+	public static void main(String[] args) {
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+}
+
+class counter {
+	
+	private int count = 0; 
+	
+	
+}
+
+class atomicCounter {
+	
+	
+	
+}
+
+
+
+

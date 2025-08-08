@@ -1,0 +1,39 @@
+spring:
+  cache:
+    cache-names: rate-limit-bucket
+    caffeine:
+      spec: >
+        maximumSize = 10000,
+        expireAfterAccess=30m
+
+  datasource:
+    hikari:
+      max-lifetime: 270000 # 4.5 minutes (in ms)
+      idle-timeout: 200000 # 4.1 minutes (should be less than maxLifetime)
+      connection-timeout: 10000
+      minimum-idle: 2
+      maximum-pool-size: 10
+      pool-name: "DevDBPool"
+      connection-test-query: SELECT 1
+  jpa:
+    open-in-view: false 
+    hibernate:
+      ddl-auto: ${DDL_AUTO:create-drop}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    clean-disabled: ${FLYWAY_CLEAN:false} 
+    validate-on-migrate: ${FLYWAY_VALIDATE-MIGRATION:false}
+    baseline-on-migrate: ${FLYWAY_BASELINE-MIGRATION:false}
+    baseline-version: ${FLYWAY_VERSION:1}
+
+application:
+  page:
+    size: ${PAGE_SIZE:10}
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS}
+    time: ${CORS_TIME:3600}
+  rate:
+    limit: ${RATE_LIMIT:20}
+    refil:
+      time: ${REFIL_TIME:30S}

@@ -1,0 +1,34 @@
+1751954761085	Rename method 'generateDeterministic'
+1752188943321	Rename method 'sendBookToAws'
+1752191891130	Rename method 'editBook'
+1752192925917	Rename method 'ensureExistsAndGetId'
+1752193133975	Rename local variable 'id'
+1752193705230	Rename method 'findBookByParams'
+1752193715265	Rename method 'findBookById'
+1752196173241	Rename local variable 'id'
+1752196179687	Rename local variable 'id'
+1752196188305	Rename local variable 'id'
+1752204327272	Move compilation unit
+1752205070324	Copy package
+1752205151628	Move compilation unit
+1752205193109	Copy compilation units
+1752205196176	Copy compilation unit
+1752205201299	Copy compilation unit
+1752205205620	Copy compilation units
+1752205208347	Copy compilation units
+1752205259469	Copy compilation unit
+1752206700824	Move compilation unit
+1752206839848	Copy compilation unit
+1752206966583	Delete element
+1752207448858	Delete element
+1752210264133	Move compilation units
+1752210265613	Delete element
+1752210269140	Move compilation units
+1752210269928	Delete element
+1752210272717	Move compilation unit
+1752210273523	Delete element
+1752210275932	Move compilation unit
+1752210276680	Delete element
+1752210280843	Move compilation units
+1752210281532	Delete element
+1752210364036	Rename type 'KafkaConsumer'

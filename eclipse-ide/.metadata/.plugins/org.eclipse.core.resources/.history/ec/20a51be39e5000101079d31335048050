@@ -1,0 +1,41 @@
+package updateknowledge.generic_methods;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import updateknowledge.generic_methods.util.A;
+import updateknowledge.generic_methods.util.B;
+
+public class GenericWildcards {
+
+	static {
+		List<A> listA = new ArrayList<>();
+		List<B> listB = new ArrayList<>();
+		List<?> listUnknown1 = new ArrayList<>();
+		List<? extends A> listUnknown2 = new ArrayList<>();
+		List<? super A> listUnknown3 = new ArrayList<>();
+	}
+
+	public static void main(String[] args) {
+
+		processElements(listA);
+	}
+
+	public void processElements(List<A> elements) {
+		for (A o : elements) {
+			System.out.println(o);
+		}
+	}
+	
+	public void processElementsObject(List<?> elements) {
+		for (Object o : elements) {
+			System.out.println(o);
+		}
+	}
+	
+	public void processElementsObject(List<?> elements) {
+		for (Object o : elements) {
+			System.out.println(o);
+		}
+	}
+}

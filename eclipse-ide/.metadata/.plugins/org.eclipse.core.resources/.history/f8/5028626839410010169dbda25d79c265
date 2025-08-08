@@ -1,0 +1,56 @@
+package com.tom.benchmark.product.mapper;
+
+import com.tom.benchmark.product.dto.ProductRequest;
+import com.tom.benchmark.product.dto.ProductResponse;
+import com.tom.benchmark.product.model.Product;
+import java.math.BigDecimal;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-06-04T01:34:53-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class ProductMapperImpl implements ProductMapper {
+
+    @Override
+    public Product toProduct(ProductRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Product product = new Product();
+
+        product.setSku( request.sku() );
+        product.setName( request.name() );
+        product.setDescription( request.description() );
+        product.setPrice( request.price() );
+
+        return product;
+    }
+
+    @Override
+    public ProductResponse toResponse(Product product) {
+        if ( product == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String sku = null;
+        String name = null;
+        String description = null;
+        BigDecimal price = null;
+
+        id = product.getId();
+        sku = product.getSku();
+        name = product.getName();
+        description = product.getDescription();
+        price = product.getPrice();
+
+        ProductResponse productResponse = new ProductResponse( id, sku, name, description, price );
+
+        return productResponse;
+    }
+}

@@ -1,0 +1,20 @@
+package com.tom.front.basic.service;
+
+import java.util.Random;
+
+import org.springframework.stereotype.Component;
+
+import com.tom.front.basic.repository.BookRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class BookUtils {
+
+	private final BookRepository repostiory;
+	
+	
+	
+	
+}

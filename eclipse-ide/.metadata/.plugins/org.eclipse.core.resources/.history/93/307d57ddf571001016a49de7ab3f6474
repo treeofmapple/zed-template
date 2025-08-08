@@ -1,0 +1,43 @@
+package com.tom.front.full.service;
+
+import java.util.Random;
+
+import org.springframework.stereotype.Component;
+
+import com.tom.front.full.model.Employee;
+import com.tom.front.full.repository.EmployeeRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class EmployeeUtils {
+
+	private final EmployeeRepository repository;
+
+	public Employee findById(long query) {
+		return repository.findById(query).orElseThrow(() -> {
+			throw new RuntimeException("");
+		});
+	}
+
+	public void ensureNameAreUnique(String name) {
+		if (repository.existsByName(name)) {
+			throw new RuntimeException("Already Exists");
+		}
+	}
+
+	public void checkIfNameIsTaken(Employee currentEmployee, String name) {
+	    if (!currentEmployee.getName().equalsIgnoreCase(name)) {
+			if (repository.existsByNameAndIdNot(name, currentEmployee.getId())) {
+				throw new RuntimeException("");
+			}
+	    }
+	}
+	
+	public String generateEmployeeCode() {
+		Random random = new Random();
+		random.toString();
+	}
+	
+}

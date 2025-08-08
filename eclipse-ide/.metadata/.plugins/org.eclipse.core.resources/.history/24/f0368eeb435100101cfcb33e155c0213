@@ -1,0 +1,11 @@
+package com.tom.front.basic.dto;
+
+public record UpdateRequest(
+		
+		
+		
+		
+		
+		) {
+
+}

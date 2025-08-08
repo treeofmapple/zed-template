@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tom.prototype</groupId>
+	<artifactId>svo-raytracer-2</artifactId>
+	<version>t-01</version>
+	<name>Raytracer</name>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>io.github.spair</groupId>
+			<artifactId>imgui-java-app</artifactId>
+			<version>1.89.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.spair</groupId>
+			<artifactId>imgui-java-binding</artifactId>
+			<version>1.89.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.spair</groupId>
+			<artifactId>imgui-java-lwjgl3</artifactId>
+			<version>1.89.0</version>
+		</dependency>
+
+		<!-- JOML (Java OpenGL Math Library) -->
+		<dependency>
+			<groupId>org.joml</groupId>
+			<artifactId>joml</artifactId>
+			<version>1.10.8</version>
+		</dependency>
+
+		<!-- LWJGL core + bindings -->
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-glfw</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-opengl</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-openal</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-opencl</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-stb</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-assimp</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl-cuda</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+
+
+	</dependencies>
+
+
+</project>

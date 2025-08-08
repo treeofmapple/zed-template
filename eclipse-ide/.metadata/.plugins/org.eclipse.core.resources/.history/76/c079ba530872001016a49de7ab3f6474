@@ -1,0 +1,20 @@
+package com.tom.backdoor.server.config;
+
+import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class ConfigUtil {
+	
+	public String stopService() {
+		
+	}
+	
+	public String clearData() {
+		
+	}
+	
+	
+}

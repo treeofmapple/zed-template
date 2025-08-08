@@ -1,0 +1,5 @@
+package com.tom.front.basic.repository;
+
+public class BookSpecification {
+
+}

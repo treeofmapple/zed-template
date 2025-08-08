@@ -1,0 +1,142 @@
+package com.tom.front.basic.service;
+
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.tom.front.basic.common.IsbnGenerator;
+import com.tom.front.basic.common.ServiceLogger;
+import com.tom.front.basic.common.SystemUtils;
+import com.tom.front.basic.dto.BookPageResponse;
+import com.tom.front.basic.dto.BookRequest;
+import com.tom.front.basic.dto.BookResponse;
+import com.tom.front.basic.dto.DataRequest;
+import com.tom.front.basic.dto.UpdateRequest;
+import com.tom.front.basic.mapper.BookMapper;
+import com.tom.front.basic.model.Book;
+import com.tom.front.basic.repository.BookRepository;
+
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BookService {
+
+	@Value("${application.page.size:10}")
+	private int PAGE_SIZE;
+
+	private final ConcurrentHashMap<String, Object> creationLock = new ConcurrentHashMap<>();
+	
+	private final BookRepository repository;
+	private final BookMapper mapper;
+	private final BookUtils bookUtils;
+	private final SystemUtils utils;
+	private final IsbnGenerator isbnGenerator; // Core Logic
+	
+	@Transactional(readOnly = true)
+	public BookPageResponse findAllBooks(
+			@RequestParam(defaultValue = "0") int value, 
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		
+		Pageable pageable = PageRequest.of(value, PAGE_SIZE);
+		Page<Book> books = repository.findAll(pageable);
+		return mapper.toBookPageResponse(books);
+	}
+	
+	@Transactional(readOnly = true)
+	public BookPageResponse findBookByTitle(
+			@RequestParam(defaultValue = "0") int value,
+			String title,
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		
+		Pageable pageable = PageRequest.of(value, PAGE_SIZE);
+		Page<Book> books = repository.findByTitleContainingIgnoreCase(title, pageable);
+		return mapper.toBookPageResponse(books);
+	}
+	
+	@Transactional(readOnly = true)
+	public BookPageResponse findBookByAuthor(
+			@RequestParam(defaultValue = "0") int value,
+			String author,
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		
+		Pageable pageable = PageRequest.of(value, PAGE_SIZE);
+		Page<Book> books = repository.findByAuthorContainingIgnoreCase(author, pageable);
+		return mapper.toBookPageResponse(books);
+	}
+	
+	@Transactional(readOnly = true)
+	public BookPageResponse findBookByPublishedDate(
+			@RequestParam(defaultValue = "0") int value,
+			DataRequest request,
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		
+		Pageable pageable = PageRequest.of(value, PAGE_SIZE);
+		Page<Book> books = repository.findAll(pageable);
+		return mapper.toBookPageResponse(books);
+	}
+	
+	@Transactional
+	public BookResponse createBook(BookRequest request, 
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		Object lock = creationLock.computeIfAbsent("NONE", k -> new Object());
+		synchronized (lock) {
+			try {
+				
+				return mapper.toResponse(null);
+			} finally {
+				creationLock.remove("NONE");
+			}
+		}
+	}
+	
+	@Transactional
+	public BookResponse editBook(long id, UpdateRequest request, 
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		
+		return null;
+	}
+
+	@Transactional
+	public BookResponse updateIsbn(long id, 
+			HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info("IP {}", userIp);
+		String ab = isbnGenerator.generateIsbn13("978", "1");
+		// delete anterior generate a new one and insert the new one
+		
+		return null;
+	}
+	
+	@Transactional
+	public void deleteBook(long id, HttpServletRequest httpRequest) {
+		String userIp = utils.getRequestingClientIp(httpRequest);
+		ServiceLogger.info(null);
+		
+		var toRemove = bookUtils.ensureExistsAndGet(userIp);
+		repository.deleteById(id);
+		
+		ServiceLogger.info(null);
+	}
+	
+}

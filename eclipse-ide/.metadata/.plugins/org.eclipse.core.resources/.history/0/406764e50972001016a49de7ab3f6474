@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: console
+  application:
+    name: server
+
+server:
+  port: ${SERVER_PORT:8000}
+  forward-headers-strategy: framework

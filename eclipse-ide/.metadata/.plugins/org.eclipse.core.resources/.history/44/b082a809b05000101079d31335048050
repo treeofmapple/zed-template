@@ -1,0 +1,19 @@
+package updateknowledge.security.key;
+
+
+public class JavaKeygen {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public void createKeygen() {
+		KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+	}
+	
+	public void initializeKeygen() {
+		
+		
+	}
+	
+}

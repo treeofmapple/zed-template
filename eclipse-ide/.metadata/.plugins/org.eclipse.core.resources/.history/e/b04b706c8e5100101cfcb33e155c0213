@@ -1,0 +1,15 @@
+package com.tom.front.basic.repository;
+
+import java.time.LocalDate;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import com.tom.front.basic.model.Book;
+
+public class BookSpecification {
+
+	public static Specification<Book> findByCriteria(String title, String author, LocalDate startDate, LocalDate endDate) {
+		
+	}
+	
+}

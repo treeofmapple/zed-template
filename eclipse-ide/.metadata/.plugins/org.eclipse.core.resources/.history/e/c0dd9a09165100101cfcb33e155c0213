@@ -1,0 +1,14 @@
+package com.tom.front.authbasic.model;
+
+import jakarta.persistence.MappedSuperclass;
+import lombok.Data;
+
+@Data
+@MappedSuperclass
+public abstract class Auditable {
+
+	private LocalDateTime createAt;
+	
+	private LocalDateTime updatedAt;
+	
+}

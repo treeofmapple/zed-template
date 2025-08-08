@@ -1,0 +1,33 @@
+package com.tom.backdoor.application.config;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
+@Component
+@RequestScope
+public class ComponentService {
+
+	public ComponentService() {
+		lockEndpoints();
+	}
+	
+	private void lockEndpoints() {
+		if(checkLockFile == true) {
+			
+		}
+	}
+
+	
+	
+	private boolean checkLockFile() {
+		Path path = Paths.get("file.lock");
+		if(Files.exists(path)) {
+			return true;
+		}
+		return false;
+	}
+}

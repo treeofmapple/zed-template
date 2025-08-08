@@ -1,0 +1,12 @@
+package com.tom.front.basic.dto;
+
+import jakarta.validation.constraints.PastOrPresent;
+
+public record DataRequest(
+		
+		@PastOrPresent(message = "Published date cannot be in the future.")
+		LocalDate publishedDate
+		
+		) {
+
+}

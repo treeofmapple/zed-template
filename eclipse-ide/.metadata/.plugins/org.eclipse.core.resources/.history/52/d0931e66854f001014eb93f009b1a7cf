@@ -1,0 +1,34 @@
+package server;
+
+import server.util.MultiThread;
+import server.util.SingleThread;
+
+public class Main extends Operations {
+
+	public static void main(String[] args) {
+		SingleThreadServer();
+	}
+	
+	
+}
+
+
+class Operations {
+	
+	public static void SingleThreadServer() {
+		SingleThread sg = new SingleThread(9000);
+		
+		
+	}
+
+	public static void MultiThreadServer() {
+		MultiThread sg = new MultiThread(9001);
+	}
+
+	
+	public static void ThreadPooledServer() {
+		
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.tom.front.authbasic.model;
+
+public class Book extends Auditable {
+
+}

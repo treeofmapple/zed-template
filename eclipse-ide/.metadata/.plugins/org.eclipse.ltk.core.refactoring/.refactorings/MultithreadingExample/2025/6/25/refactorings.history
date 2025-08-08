@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 packages to &apos;Multithreading/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;MultithreadingExample&apos;&#x0D;&#x0A;- Destination element: &apos;Multithreading/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     MultithreadingExample/src/multithread&#x0D;&#x0A;     MultithreadingExample/src/threading&#x0D;&#x0A;     MultithreadingExample/src/main&#x0D;&#x0A;- Update references to refactored element" description="Move packages" destination="=Multithreading/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src&lt;multithread" element2="/src&lt;threading" element3="/src&lt;main" flags="589830" fragments="3" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1750272920422" version="1.0"/>
+</session>

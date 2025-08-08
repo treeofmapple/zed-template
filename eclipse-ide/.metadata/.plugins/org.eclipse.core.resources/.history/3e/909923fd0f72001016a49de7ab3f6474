@@ -1,0 +1,5 @@
+package com.tom.backdoor.application.common;
+
+public class LockInterceptor {
+
+}

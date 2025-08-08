@@ -1,0 +1,107 @@
+package concurrency;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+class threadSyncronization {
+
+	private static task1 tk = new task1();
+	
+	public static void main(String[] args) {
+		tk.startThread1();
+	}
+	
+}
+
+class task1 {
+	
+	Runnable task1 = () -> {
+		 System.out.println("Task 1 running in thread: " + Thread.currentThread().getName());
+	};
+	
+	Thread thread1 = new Thread(task1, "Mythread1");
+	
+	public void startThread1() {
+		thread1.start();
+	}
+	
+	public void threadJoin() {
+
+	
+}
+
+
+class task2 {
+	
+    Thread thread2 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            System.out.println("Task 2 running in thread: " + Thread.currentThread().getName());
+        }
+    }, "MyThread-2");
+    
+    public void startThread2() {
+    	thread2.start();
+    }
+	
+}
+
+
+class task3 {
+	
+	
+	
+}
+
+class task4 {
+	
+	
+	
+}
+
+
+class counter {
+	
+	private int count = 0; 
+	private final Object lock = new Object();
+	
+    // Method using synchronized keyword for thread safety
+    public void incrementSynchronized() {
+        synchronized (lock) { // Synchronize on a specific object
+            count++;
+        }
+    }
+
+    // Method using synchronized method for thread safety
+    public synchronized void incrementSynchronizedMethod() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+	
+}
+
+class atomicCounter {
+	
+	private AtomicInteger count = new AtomicInteger(0);
+	
+	public void increment() {
+		count.incrementAndGet();
+	}
+	
+	public int getCount() {
+		return count.get();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

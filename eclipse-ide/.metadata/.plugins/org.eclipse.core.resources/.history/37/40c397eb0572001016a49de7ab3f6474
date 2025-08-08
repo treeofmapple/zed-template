@@ -1,0 +1,31 @@
+package com.tom.backdoor.server.config;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/v1/trigger")
+@RequiredArgsConstructor
+public class BaseController {
+
+	private final ConfigUtil util;
+	
+	@PostMapping("/stop")
+	public ResponseEntity<String> stopSystem() {
+		
+		
+		return ResponseEntity.status(null).body(null);
+	}
+	
+	@PostMapping("/clear")
+	public ResponseEntity<String>clearData() {
+
+		
+		
+	}
+	
+}

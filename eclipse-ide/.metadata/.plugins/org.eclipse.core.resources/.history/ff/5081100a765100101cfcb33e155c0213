@@ -1,0 +1,40 @@
+package com.tom.front.basic.service;
+
+import org.springframework.stereotype.Component;
+
+import com.tom.front.basic.model.Book;
+import com.tom.front.basic.repository.BookRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class BookUtils {
+
+	private final BookRepository repository;
+	
+	public Book ensureExistsAndGet(String name) {
+		return repository.findByTitle(name).or(
+				() -> repository.findByIsbn(name))
+				.orElseThrow(() -> {
+					
+			return new RuntimeException("Book not found with title or ISBN: " + name);
+		});
+	}
+	
+	public void ensureUniqueName(String name) {
+		if(repository.existsByTitleOrIsbn(name, name)) {
+			throw new IllegalStateException("A book with the title or ISBN '" + name + "' already exists.");
+		}
+	}
+	
+	public void checkIfAlreadyExists(Book currentBook, String newName) {
+		repository.findByTitle(newName).ifPresent(existent -> {
+			if (!existentBook.getId().equals(currentBook.getId())) {
+				throw new IllegalStateException("The title '" + newName + "' is already in use by another book.");
+			}
+		});
+	}
+	
+	
+}

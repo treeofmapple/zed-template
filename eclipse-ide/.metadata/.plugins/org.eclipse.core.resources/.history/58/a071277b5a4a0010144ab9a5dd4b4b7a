@@ -1,0 +1,89 @@
+package concurrency;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+class threadSyncronization {
+
+	public static void main(String[] args) {
+	
+		
+	}
+	
+}
+
+class task1 {
+	
+	Runnable task1 = () -> {
+		 System.out.println("Task 1 running in thread: " + Thread.currentThread().getName());
+	};
+	
+	
+}
+
+
+class task2 {
+	
+	
+	
+}
+
+
+class task3 {
+	
+	
+	
+}
+
+class task4 {
+	
+	
+	
+}
+
+
+class counter {
+	
+	private int count = 0; 
+	private final Object lock = new Object();
+	
+    // Method using synchronized keyword for thread safety
+    public void incrementSynchronized() {
+        synchronized (lock) { // Synchronize on a specific object
+            count++;
+        }
+    }
+
+    // Method using synchronized method for thread safety
+    public synchronized void incrementSynchronizedMethod() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+	
+}
+
+class atomicCounter {
+	
+	private AtomicInteger count = new AtomicInteger(0);
+	
+	public void increment() {
+		count.incrementAndGet();
+	}
+	
+	public int getCount() {
+		return count.get();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

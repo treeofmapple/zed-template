@@ -1,0 +1,39 @@
+package com.tom.front.basic.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
+public record BookRequest(
+		
+		@NotNull()
+		String title,
+		
+
+		String author,
+		
+		
+		BigDecimal price,
+		
+		
+		LocalDate publishedDate,
+		
+		@Value("${application.data}")
+		
+		@Min(value = 0, message = "")
+		Integer stockQuantity
+		
+		) {
+	class Variables () {
+		
+	}
+}
+
+
+class Variables () {
+	
+}

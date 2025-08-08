@@ -1,0 +1,52 @@
+package server.util;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ThreadPooled extends ThreadOperations implements Runnable {
+
+	public ThreadPooled(int port) {
+		this.serverPort = port;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+	
+}
+
+class ThreadVariables {
+	
+	protected int serverPort = 8080;
+	protected ServerSocket serverSocket = null;
+	protected boolean isStopped = false;
+	protected Thread runningThread = null;
+	
+	protected Socket clientSocket = null;
+	protected String serverText = null;
+	
+}
+
+class ThreadWorkerRunnable extends ThreadVariables implements Runnable {
+	
+	public ThreadWorkerRunnable(Socket clientSocker, String serverText) {
+		this.clientSocket = clientSocker;
+		this.serverText = serverText;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+	
+}
+
+class ThreadOperations extends ThreadVariables {
+
+	
+	
+}
+
+
+

@@ -1,0 +1,5 @@
+package com.tom.front.authbasic.dto;
+
+public record BookRequest() {
+
+}

@@ -1,0 +1,59 @@
+package com.tom.benchmark.client.mapper;
+
+import com.tom.benchmark.client.dto.ClientRequest;
+import com.tom.benchmark.client.dto.ClientResponse;
+import com.tom.benchmark.client.model.Client;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-06-04T01:35:08-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class ClientMapperImpl implements ClientMapper {
+
+    @Override
+    public Client toClient(ClientRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Client client = new Client();
+
+        client.setName( request.name() );
+        client.setCpf( request.cpf() );
+
+        return client;
+    }
+
+    @Override
+    public ClientResponse toResponse(Client client) {
+        if ( client == null ) {
+            return null;
+        }
+
+        Long id = null;
+        String name = null;
+        String cpf = null;
+
+        id = client.getId();
+        name = client.getName();
+        cpf = client.getCpf();
+
+        ClientResponse clientResponse = new ClientResponse( id, name, cpf );
+
+        return clientResponse;
+    }
+
+    @Override
+    public void updateClientFromRequest(ClientRequest request, Client client) {
+        if ( request == null ) {
+            return;
+        }
+
+        client.setName( request.name() );
+        client.setCpf( request.cpf() );
+    }
+}

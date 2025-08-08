@@ -1,0 +1,25 @@
+package com.tom.backdoor.application.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.tom.backdoor.application.common.LockInterceptor;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@RequiredArgsConstructor
+public class WebConfig implements WebMvcConfigurer {
+
+	private final LockInterceptor lockInterceptor;
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(lockInterceptor)
+				 .addPathPatterns("/v1/user/**");
+		 		 .addPathPatterns("/v1/internal/lock/**"); // make this endpoint unacessible by the user
+	}
+	
+	
+}

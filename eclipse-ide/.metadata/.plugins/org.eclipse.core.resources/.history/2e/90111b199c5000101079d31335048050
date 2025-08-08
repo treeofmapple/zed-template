@@ -1,0 +1,7 @@
+package updateknowledge;
+
+public class InstatiationGenerics {
+
+	GenericsFactory<Instantiation>
+	
+}

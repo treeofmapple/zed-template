@@ -1,0 +1,92 @@
+1751867381098	Rename resource 'dockerfile'
+1751867392761	Rename resource 'Dockerfile'
+1751867861194	Copy file
+1751869156491	Move compilation units
+1751869158030	Delete element
+1751869160965	Move compilation units
+1751869161897	Delete element
+1751869164183	Move compilation unit
+1751869164905	Delete element
+1751869169175	Move compilation unit
+1751869170246	Delete element
+1751869172016	Move compilation unit
+1751869173162	Delete element
+1751869175689	Move compilation units
+1751869176726	Delete element
+1751875219325	Delete element
+1751875247938	Delete element
+1751875254466	Delete element
+1751875260575	Delete element
+1751896868364	Delete elements
+1751920384416	Rename field 'data'
+1751928429018	Copy compilation units
+1751996056885	Move compilation units
+1752008379883	Copy compilation unit
+1752008387265	Delete element
+1752043392609	Rename local variable 'noteName'
+1752045474834	Rename method 'mergeFromMultipartFile'
+1752102199018	Delete elements
+1752102202144	Delete element
+1752120446190	Rename local variable 'imageName'
+1752120835906	Rename local variable 'noteName'
+1752129143835	Rename local variable 'image'
+1752129802894	Rename local variable 'key'
+1752130621929	Rename method 'putObject'
+1752130643656	Rename method 'objectAsBytes'
+1752135120543	Delete elements
+1752135204988	Delete element
+1752135330106	Delete element
+1752146650724	Rename method 'fromProduct'
+1752147684261	Move compilation unit
+1752147704207	Move compilation unit
+1752147713762	Move compilation unit
+1752182587924	Rename local variable 'value'
+1752182590877	Rename local variable 'value'
+1752182598925	Rename local variable 'name'
+1752182602274	Rename local variable 'id'
+1752182620332	Rename local variable 'request'
+1752184328678	Rename local variable 'request'
+1752187350246	Rename local variable 'name'
+1752188568689	Delete element
+1752191680122	Rename method 'existsByName'
+1752191693298	Rename method 'toProduct'
+1752191700224	Rename method 'builld'
+1752193411699	Rename local variable 'booksToSave'
+1752193522439	Rename local variable 'id'
+1752193654747	Rename method 'findImageById'
+1752193666596	Rename method 'findObjectByParams'
+1752193681187	Rename method 'searchImageById'
+1752193733801	Rename method 'findProductById'
+1752193741867	Rename method 'findProductByParams'
+1752195795716	Rename method 'editProduct'
+1752203791958	Rename method 'еnsureUniqueName'
+1752205058106	Delete elements
+1752205074814	Delete element
+1752205156422	Move compilation unit
+1752206790607	Move compilation units
+1752206792146	Delete element
+1752206795400	Move compilation unit
+1752206796225	Delete element
+1752206798940	Move compilation unit
+1752206800359	Delete element
+1752206803690	Move compilation units
+1752206805480	Delete element
+1752206808328	Move compilation units
+1752206809930	Delete element
+1752206865290	Move compilation unit
+1752206867055	Delete element
+1752206992145	Copy package
+1752207019795	Delete element
+1752207032055	Rename package 'com.tom.aws.awstest.kafka.producer'
+1752207184801	Rename field 'repository'
+1752207262850	Move compilation unit
+1752207271115	Move compilation unit
+1752230905070	Delete elements
+1752260646755	Rename local variable 'name'
+1752269124743	Delete element
+1752271647097	Delete element
+1752271702183	Delete element
+1752272441364	Move file
+1752347654635	Rename field 'awsConfig'
+1752351705955	Delete element
+1752351770656	Delete element

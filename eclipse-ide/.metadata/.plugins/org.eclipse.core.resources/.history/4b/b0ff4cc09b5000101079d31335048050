@@ -1,0 +1,11 @@
+package updateknowledge;
+
+public class GenericsFactory <T> {
+
+	Class theClass = null;
+	
+	public GenericsFactory(Class theClass) {
+		this.theClass = theClass;
+	}
+	
+}

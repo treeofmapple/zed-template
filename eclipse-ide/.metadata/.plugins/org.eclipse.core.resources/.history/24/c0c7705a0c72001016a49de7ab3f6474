@@ -1,0 +1,5 @@
+package com.tom.backdoor.application.config;
+
+public class ComponentController {
+
+}

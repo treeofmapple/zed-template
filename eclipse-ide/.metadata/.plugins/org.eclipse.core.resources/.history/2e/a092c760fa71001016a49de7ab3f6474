@@ -1,0 +1,60 @@
+package com.tom.front.full.service;
+
+import java.util.Random;
+
+import org.springframework.stereotype.Component;
+
+import com.tom.front.full.model.Employee;
+import com.tom.front.full.repository.EmployeeRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class EmployeeUtils {
+
+	private final EmployeeRepository repository;
+
+	public Employee findById(long query) {
+		return repository.findById(query).orElseThrow(() -> {
+			throw new RuntimeException("");
+		});
+	}
+
+	public void ensureNameAreUnique(String name) {
+		if (repository.existsByName(name)) {
+			throw new RuntimeException("Already Exists");
+		}
+	}
+
+	public void checkIfNameIsTaken(Employee currentEmployee, String name) {
+	    if (!currentEmployee.getName().equalsIgnoreCase(name)) {
+			if (repository.existsByNameAndIdNot(name, currentEmployee.getId())) {
+				throw new RuntimeException("");
+			}
+	    }
+	}
+	
+	public String generateEmployeeCode() {
+		final String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		int codeLength = 8; 
+
+		Random random = new Random();
+		StringBuilder codeBuilder = new StringBuilder(codeLength);
+		
+	    for (int i = 0; i < codeLength; i++) {
+	        // 1. Get a random index from 0 to the last index of ALLOWED_CHARACTERS
+	        int randomIndex = random.nextInt(ALLOWED_CHARACTERS.length());
+	        
+	        // 2. Get the character at that random index
+	        char randomChar = ALLOWED_CHARACTERS.charAt(randomIndex);
+	        
+	        // 3. Append the random character to our code builder
+	        codeBuilder.append(randomChar);
+	    }
+	    
+	    return codeBuilder.toString();
+		
+	}
+	
+}

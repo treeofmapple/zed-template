@@ -1,0 +1,27 @@
+package server.util;
+
+public class ThreadPooled extends ThreadOperations implements Runnable {
+
+	public ThreadPooled(int port) {
+		this.serverPort = port;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+	
+}
+
+class ThreadVariables {
+	
+	protected int serverPort = 8080;
+	
+}
+
+
+class ThreadOperations extends ThreadVariables {
+
+	
+	
+}

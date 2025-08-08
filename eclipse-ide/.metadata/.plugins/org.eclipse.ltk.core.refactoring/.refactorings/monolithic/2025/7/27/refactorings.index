@@ -1,0 +1,50 @@
+1751340823778	Rename method 'logout'
+1751340906948	Rename method 'changePassword'
+1751340915016	Rename method 'editUser'
+1751400363173	Rename type 'LoginRepository'
+1751421867965	Rename type 'LoginUtils'
+1751429995369	Rename type 'UserPageResponse'
+1751430392448	Rename method 'toUserResponse'
+1751430406168	Rename method 'toUserResponseList'
+1751430453353	Rename field 'mapper'
+1751431006174	Rename field 'repository'
+1751436147001	Rename field 'repository'
+1751437921346	Rename type 'DataResponse'
+1751492834629	Rename field 'repository'
+1751493359893	Rename field 'mapper'
+1751493570214	Move compilation units
+1751493595001	Move compilation units
+1751493606533	Move compilation units
+1751493970465	Rename method 'toResponse'
+1751494165651	Delete element
+1751494385385	Delete element
+1751495329065	Rename method 'findByUserId'
+1751495683217	Rename method 'toAdminResponse'
+1751514510911	Rename method 'revokeAllUserTokens'
+1751516385617	Delete element
+1751516709755	Rename type 'LockedAccount'
+1751522141306	Rename method 'findByUserIdOrIdentifier'
+1751524374246	Rename resource 'application-dev.yml'
+1751524398100	Rename resource 'application-dev.yaml'
+1751527067719	Move compilation units
+1751527077694	Move compilation units
+1751527079135	Delete element
+1751527145321	Rename type 'DeleteResponse'
+1751527163716	Rename type 'ListDeleteResponse'
+1751529073774	Rename method 'getAuthenticatedUser'
+1751530461550	Rename compilation unit 'FeatureFlagsService.java'
+1751534010121	Rename type 'RequestUtils'
+1751534030076	Rename field 'requestUtils'
+1751534040871	Rename field 'requestUtils'
+1751535473740	Move compilation unit
+1751571873718	Rename field 'requestUtils'
+1751605602842	Move compilation unit
+1751605615800	Move compilation unit
+1751608192678	Rename local variable 'username'
+1751613653795	Delete elements
+1751695985872	Rename local variable 'key'
+1751696062074	Rename method 'isBlocked'
+1751696090483	Rename local variable 'key'
+1751700499267	Delete element
+1751703020490	Rename field 'tokenRepository'
+1751734629473	Delete element

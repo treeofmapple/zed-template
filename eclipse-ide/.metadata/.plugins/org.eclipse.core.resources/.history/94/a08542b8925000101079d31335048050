@@ -1,0 +1,27 @@
+package server.util;
+
+public class ThreadPooled extends ThreadOperations implements Runnable {
+
+	public ThreadPooled(int port) {
+		this.serverPort = port;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+class ThreadVariables {
+	
+	
+	
+}
+
+
+class ThreadOperations extends ThreadVariables {
+	
+}

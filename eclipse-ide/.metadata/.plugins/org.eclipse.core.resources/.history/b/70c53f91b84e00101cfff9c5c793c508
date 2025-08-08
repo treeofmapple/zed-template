@@ -1,0 +1,96 @@
+package com.tom.sample.auth.mapper;
+
+import com.tom.sample.auth.dto.AuthenticationResponse;
+import com.tom.sample.auth.dto.UserResponse;
+import com.tom.sample.auth.model.Token;
+import com.tom.sample.auth.model.User;
+import com.tom.sample.auth.model.enums.TokenType;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-06-14T16:17:35-0300",
+    comments = "version: 1.6.2, compiler: Eclipse JDT (IDE) 3.41.0.v20250213-1140, environment: Java 21.0.6 (Eclipse Adoptium)"
+)
+@Component
+public class AuthenticationMapperImpl implements AuthenticationMapper {
+
+    @Override
+    public User buildAttributes(String name, String username, int age, String email, String password, boolean emailVerified, String verificationToken) {
+        if ( name == null && username == null && email == null && password == null && verificationToken == null ) {
+            return null;
+        }
+
+        User user = new User();
+
+        user.setName( name );
+        user.setUsername( username );
+        user.setAge( age );
+        user.setEmail( email );
+        user.setPassword( password );
+        user.setEmailVerified( emailVerified );
+        user.setVerificationToken( verificationToken );
+
+        return user;
+    }
+
+    @Override
+    public Token buildAttributes(User user, String token, TokenType tokenType, boolean revoked, boolean expired) {
+        if ( user == null && token == null && tokenType == null ) {
+            return null;
+        }
+
+        Token token1 = new Token();
+
+        if ( user != null ) {
+            token1.setUser( user );
+            token1.setCreatedAt( user.getCreatedAt() );
+            token1.setCreatedBy( user.getCreatedBy() );
+            token1.setUpdatedAt( user.getUpdatedAt() );
+            token1.setUpdatedBy( user.getUpdatedBy() );
+            token1.setVersion( user.getVersion() );
+        }
+        token1.setToken( token );
+        token1.setTokenType( tokenType );
+        token1.setRevoked( revoked );
+        token1.setExpired( expired );
+
+        return token1;
+    }
+
+    @Override
+    public UserResponse buildUserResponse(User user) {
+        if ( user == null ) {
+            return null;
+        }
+
+        String name = null;
+        String username = null;
+        String email = null;
+
+        name = user.getName();
+        username = user.getUsername();
+        email = user.getEmail();
+
+        UserResponse userResponse = new UserResponse( name, username, email );
+
+        return userResponse;
+    }
+
+    @Override
+    public AuthenticationResponse buildResponse(String jwtToken, String refreshToken) {
+        if ( jwtToken == null && refreshToken == null ) {
+            return null;
+        }
+
+        String accessToken = null;
+        accessToken = jwtToken;
+        String refreshToken1 = null;
+        refreshToken1 = refreshToken;
+
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse( accessToken, refreshToken1 );
+
+        return authenticationResponse;
+    }
+}

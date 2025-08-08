@@ -1,0 +1,18 @@
+package com.tom.backdoor.application.config;
+
+import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class ConfigUtil {
+
+	// create a file like lock file and make it unable to access the endpoints
+	
+	
+	
+	
+	
+	
+}

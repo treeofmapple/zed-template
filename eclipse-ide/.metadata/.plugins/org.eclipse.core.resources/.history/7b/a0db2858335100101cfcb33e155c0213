@@ -1,0 +1,31 @@
+package com.tom.front.basic.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public record BookRequest(
+		
+		@NotNull(message = "")
+		@NotBlank(message = "")
+		String title,
+		
+		@NotNull(message = "")
+		@NotBlank(message = "")
+		String author,
+		
+		@Size(min = 0, max = 0, message = "")
+		BigDecimal price,
+		
+		LocalDate publishedDate,
+		
+		@Size(min = 0, max = 0, message = "")
+		Integer stockQuantity
+		
+		) {
+
+}
+

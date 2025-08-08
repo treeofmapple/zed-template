@@ -1,0 +1,5 @@
+package com.tom.front.authbasic.common;
+
+public class BookUtils {
+
+}

@@ -1,0 +1,15 @@
+CREATE TABLE book (
+	
+	id BIGSERIAL PRIMARY KEY,
+	
+	isbn VARCHAR(255) NOT NULL UNIQUE,
+	title VARCHAR(200) NOT NULL,
+	author VARCHAR(150) NOT NULL,
+	price NUMERIC(19,2),
+	published_date DATE,
+	stock_quantity INTEGER,
+	
+	created_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+	last_modified_date TIMESTAMP WITHOUT TIME ZONE NOT NULL	
+	
+);

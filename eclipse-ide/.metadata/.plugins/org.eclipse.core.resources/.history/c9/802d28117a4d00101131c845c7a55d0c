@@ -1,0 +1,26 @@
+package updateknowledge;
+
+import multithread.MyRunnable;
+
+public class Memory {
+
+	public static void main(String[] args) {
+	
+		Runnable runnable1 = new MyRunnable();
+		Runnable runnable2 = new MyRunnable();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,9 @@
+package com.tom.front.basic.repository;
+
+public class BookSpecification {
+
+	public static Specification<Book> findByCriteria(String title, String author, LocalDate startDate, LocalDate endDate) {
+		
+	}
+	
+}

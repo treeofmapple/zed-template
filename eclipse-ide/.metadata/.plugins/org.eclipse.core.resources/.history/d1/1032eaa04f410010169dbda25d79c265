@@ -1,0 +1,69 @@
+package com.tom.benchmark.order.mapper;
+
+import com.tom.benchmark.order.dto.OrderItemResponse;
+import com.tom.benchmark.order.dto.OrderRequest;
+import com.tom.benchmark.order.dto.OrderResponse;
+import com.tom.benchmark.order.model.Order;
+import com.tom.benchmark.order.model.OrderItem;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-06-04T11:21:54-0300",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21.0.7 (BellSoft)"
+)
+@Component
+public class OrderMapperImpl implements OrderMapper {
+
+    @Autowired
+    private OrderItemMapper orderItemMapper;
+
+    @Override
+    public Order toOrder(OrderRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Order order = new Order();
+
+        return order;
+    }
+
+    @Override
+    public OrderResponse toResponse(Order order, OrderItemMapper orderItemMapper) {
+        if ( order == null ) {
+            return null;
+        }
+
+        List<OrderItemResponse> items = null;
+        Long id = null;
+
+        items = orderItemListToOrderItemResponseList( order.getItems(), orderItemMapper );
+        id = order.getId();
+
+        String clientName = null;
+        BigDecimal totalPrice = calculateTotalPrice(order, orderItemMapper);
+
+        OrderResponse orderResponse = new OrderResponse( id, clientName, items, totalPrice );
+
+        return orderResponse;
+    }
+
+    protected List<OrderItemResponse> orderItemListToOrderItemResponseList(List<OrderItem> list, OrderItemMapper orderItemMapper) {
+        if ( list == null ) {
+            return null;
+        }
+
+        List<OrderItemResponse> list1 = new ArrayList<OrderItemResponse>( list.size() );
+        for ( OrderItem orderItem : list ) {
+            list1.add( orderItemMapper.toResponse( orderItem ) );
+        }
+
+        return list1;
+    }
+}

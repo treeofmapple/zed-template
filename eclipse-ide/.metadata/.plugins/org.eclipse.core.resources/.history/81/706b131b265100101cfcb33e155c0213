@@ -1,0 +1,28 @@
+package com.tom.front.basic.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.tom.front.basic.model.Book;
+
+@Repository
+public interface BookRepository extends JpaRepository<Book, Long>{
+
+	Optional<Book> findByIsbn(String title);
+
+	Optional<Book> findByTitle(String title);
+	
+	boolean existsByIsbn(String isbn);
+	
+	boolean existsByTitle(String title);
+	
+	// find by title Page
+	
+	// find by author Page
+	
+	// find by published date PAGE
+	
+	
+}
